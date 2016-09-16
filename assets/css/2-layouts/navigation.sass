@@ -1,0 +1,55 @@
+.left-wrap
+  visibility: hidden
+  z-index: 2
+  width: 300px
+  height: 100vh
+  position: relative
+  background-color: white
+  float: left
+  align-items: center
+  position: fixed
+  box-shadow: -1px 0px 10px $dark-blue
+
+  .menu-icon
+    margin-left: 10px
+    margin-top: 5px
+    overflow: hidden
+    border-radius: 50%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    text-align: center
+    +size(50px)
+    float: left
+    cursor: pointer
+    svg
+      display: block
+      margin: auto
+      +size(50px)
+      path
+        fill:$text-color
+
+  nav
+    margin-top: 200px
+    a
+      color: $text-color
+      font-weight: 550
+      font-size: $font-size
+      font-family: $font
+      font-weight: 300
+      text-decoration: none
+      height: 40px
+      width: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      text-align: center
+      background-color: white
+      &:hover
+        background-color: $clouds
+
+@media(max-width:780px)
+  .left-wrap
+    width: 100%
+    .menu-icon
+      cursor: auto

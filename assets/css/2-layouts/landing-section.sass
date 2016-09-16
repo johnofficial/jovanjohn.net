@@ -1,0 +1,61 @@
+.landing-page
+  height: 100vh
+  background-color: $green-blue
+  overflow: hidden
+  position: relative
+  border-bottom: solid $silver 1px
+
+  img
+    opacity: 0.3
+    z-index: -1
+    height: 100vh
+    filter: blur(5px)
+
+  h2 span
+    width: 100%
+    font-size: 60px
+    letter-spacing: -1px
+    background: rgba(0, 0, 0, 0.7)
+    padding: 10px
+    position: absolute
+    top: 200px
+    left: 300px
+    color: white
+    font-family: $font
+    font-weight: 300
+
+@media(max-width: 1020px)
+  .landing-page
+    img
+
+    h2 span
+      font-size: 40px
+      left: 250px
+@media(max-width: 730px)
+  .landing-page
+    img
+
+    h2 span
+      left: 150px
+
+@media(max-width: 500px)
+  .landing-page
+    img
+
+    h2 span
+      font-size: 25px
+      left: 10vh
+@media(max-width: 400px)
+  .landing-page
+    img
+
+    h2 span
+      font-size: 25px
+      left: 6vh
+@media(max-width: 340px)
+  .landing-page
+    img
+
+    h2 span
+      font-size: $font-size
+      left: 10vh

@@ -1,0 +1,64 @@
+footer
+  height: 50vh
+  width: 100%
+  background-color: $green-blue
+  flex-direction: column
+  display: flex
+  justify-content: center
+
+  .icons
+    height: 30vh
+    align-items: center
+    display: flex
+    margin: auto
+
+    a
+      margin-left: 30px
+      margin-right: 30px
+      align-items: center
+      text-decoration: none
+
+    svg
+      +size(30vh)
+      path
+        opacity: 0.7
+    .facebook
+      svg
+        &:hover
+          path
+            fill:$dark-blue
+            opacity: 1
+    .twitter
+      svg
+        &:hover
+          path
+            fill:$blue
+            opacity: 1
+    .google
+      svg
+        &:hover
+          path
+            fill:$red
+            opacity: 1
+    .github
+      svg
+        &:hover
+          path
+            fill:$brown
+            opacity: 1
+
+@media(max-width:780px)
+  footer
+    .icons
+      a
+      svg
+        +size(10vh)
+
+@media(max-width:420px)
+  footer
+    .icons
+      a
+        margin-left: 10px
+        margin-right: 10px
+      svg
+        +size(50px)

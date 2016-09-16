@@ -1,0 +1,62 @@
+.page-content
+  .nav-bar
+    position: fixed
+    opacity: transparent
+    width: 100%
+    height: 60px
+    z-index: 1
+    .menu-icon-content
+      position: fixed
+      z-index: 1
+      margin-left: 10px
+      margin-top: 5px
+      overflow: hidden
+      border-radius: 50%
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      text-align: center
+      +size(50px)
+      float: left
+      cursor: pointer
+      svg
+        display: block
+        margin: auto
+        +size(30px)
+        path
+          fill:$text-color
+      &:active
+        transition: 0.5s
+        background-color: $silver
+  .scrollTop
+    border-radius: 50%
+    display: none
+    float: right
+    margin-top: 5px
+    margin-right: 10px
+    position: fixed
+    top: 80vh
+    right: 10vh
+    z-index: 9
+    svg
+      +size(60px)
+      path
+        transition: 0.5s
+        fill: black
+        opacity: 0.3
+      &:hover path
+        opacity: 1
+
+
+
+@media(max-width:780px)
+  .page-content
+    .nav-bar
+      .menu-icon-content
+        cursor: auto
+    .scrollTop
+      top: 85vh
+      right: 5vh
+      cursor:  none
+      svg
+        +size(40px)
