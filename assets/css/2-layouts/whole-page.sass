@@ -6,3 +6,17 @@
     height: 1000px
     background-color: $clouds
     position: relative
+
+.come-in
+  transform: translateX(-100%)
+  animation: come-in 1s ease-in-out forwards
+
+.already-visible
+
+  transform: translateY(0)
+  animation: none
+
+
+@keyframes come-in
+  to
+    transform: translateY(0)

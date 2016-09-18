@@ -2,13 +2,77 @@ $(function(){
   showHideMenu();
   smoothScroll(600);
   scrollTop();
+  scrollAnimation();
+
+  //This is function for news page
   gridMasonry();
+  //end news page function
 });
 
+//Function to load animation when is section is in viewport
+
+function scrollAnimation() {
+
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *     the user visible viewport of a web browser.
+     *     only accounts for vertical position, not horizontal.
+     */
+
+    $.fn.visible = function(partial) {
+
+        var $t            = $(this),
+            $w            = $(window),
+            viewTop       = $w.scrollTop(),
+            viewBottom    = viewTop + $w.height(),
+            _top          = $t.offset().top,
+            _bottom       = _top + $t.height(),
+            compareTop    = partial === true ? _bottom : _top,
+            compareBottom = partial === true ? _top : _bottom;
+
+      return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+    };
+
+
+
+  var win = $(window);
+
+  var allMods = $(".about-section, .skills-section, .education-section, .contact-section, .footer");
+
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("already-visible");
+    }
+  });
+
+  win.scroll(function(event) {
+
+    allMods.each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("come-in");
+      }
+    });
+
+  });
+}
 
 //This is for navigation section, and with this we can show and hide menu with click on menu icon
 
 function showHideMenu(){
+  var other = $('.landing-page, .about-section, .skills-section, .education-section, .contact-section, .footer');
+  $(other).click(function(){
+    $('.left-wrap').css('visibility', 'hidden');
+  });
+
   $('.menu-icon').click(function(){
     $('.left-wrap').css('visibility', 'hidden');
   });
