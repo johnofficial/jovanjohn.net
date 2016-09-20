@@ -1,0 +1,64 @@
+.help-section
+  height: 105vh
+  width: 100%
+  background-color: $blue
+
+  h2
+    text-align: center
+    font-size: 6vh
+    margin-top: 0
+    padding-top: 5vh
+    font-family: $font
+    font-weight: 300
+    letter-spacing: 2vh
+    color: white
+  .help-wrap
+    .question-wrap
+      margin-top: 5%
+      width: 80%
+      text-align: justify
+      &:hover  h3
+        font-size: 26px
+        font-weight: 400
+      h3
+        transition: 1s
+        line-height: 6vh
+        color: white
+        font-family: $font
+        font-weight: 300
+        font-size: 24px
+        margin-left: 10%
+        letter-spacing: 1vh
+    .contact-me-now
+      margin-top: 7%
+      h3
+        transition: 1s
+        line-height: 6vh
+        color: white
+        font-family: $font
+        font-weight: 200
+        font-size: 24px
+        margin-left: 10%
+        letter-spacing: 1vh
+        a
+          font-size: 26px
+          text-decoration: none
+          color: $red
+          transition: 1s
+          &:hover
+            font-size: 32px
+            font-weight: 400
+
+
+
+@media(max-width:790px)
+  .help-section
+    height: 1300px
+    .help-wrap
+      .question-wrap
+        width: 90%
+      .contact-me-now
+        h3
+          text-align: center
+          justify-content: space-around
+          width: 80%

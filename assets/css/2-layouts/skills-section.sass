@@ -1,7 +1,8 @@
 .skills-section
-  height:  105vh
+  min-height:  105vh
   width: 100%
-  background-color: $orange
+  background-color: $green-blue
+
 
   h2
     text-align: center
@@ -12,3 +13,174 @@
     font-weight: 300
     letter-spacing: 2vh
     color: white
+
+  .skill-wrap
+    display: flex
+    margin: auto
+    justify-content: space-between
+
+    .skill-text
+      width: 45%
+      float: left
+      border-right: 1px solid black
+
+      h3
+        color: white
+        font-family: $font
+        font-weight: 300
+        font-size: 24px
+        margin-left: 10%
+        letter-spacing: 1vh
+      p
+        text-align: right
+        margin-right: 10%
+        font-family: $font
+        color: white
+        font-size: 2.5vh
+        letter-spacing: 0.5vh
+        line-height: 5vh
+      ul
+        float: right
+        margin-right: 15%
+        li
+          margin-right: 10%
+          font-family: $font
+          color: white
+          font-size: 2.5vh
+          letter-spacing: 0.5vh
+          line-height: 5vh
+      .more-text
+        float: left
+        text-align: left
+        margin-left: 10%
+
+    .skill-icons-wrap
+      display: flex
+      margin: auto
+      float: right
+      width: 55%
+      justify-content: center
+      flex-direction: column
+      .skill-icons
+        text-align: center
+
+        .html
+          margin: 20px
+          display: inline-block
+          position: relative
+          +size(200px)
+          background-image: url(../img/html.svg)
+          background-size: cover
+          border-radius: 50%
+          opacity: 0.6
+          &:hover
+            animation: zoom1 1.5s linear infinite
+            opacity: 1
+
+        .css
+          margin: 20px
+          display: inline-block
+          position: relative
+          +size(200px)
+          background-image: url(../img/css.svg)
+          background-size: cover
+          border-radius: 50%
+          &:hover
+            animation: zoom 1.5s linear infinite
+          &:after, &:before
+            content: ''
+            display: block
+            +size(200px)
+            border-radius: 50%
+
+        .jquery
+          margin: 20px
+          display: inline-block
+          position: relative
+          +size(200px)
+          background-image: url(../img/jquery.svg)
+          background-size: cover
+          border-radius: 50%
+          &:hover
+            animation: zoom 1.5s linear infinite
+
+        .animation-1:after
+          position: absolute
+          left: -10px
+          top: -10px
+          border: 10px solid transparent
+          border-top-color: $yellow
+          border-bottom-color: $yellow
+          animation: spin 2s linear infinite
+
+
+
+@media(max-width:1200px)
+  .skills-section
+    min-height: 100vh
+    height: 1000px
+    .skill-wrap
+      .skill-text
+        border-right: none
+      .skill-icons-wrap
+        border-left: 1px solid black
+        align-items: center
+        .skill-icons
+          .html, .css, .jquery
+            display: block
+
+
+@media(max-width:790px)
+  .skills-section
+    height: 1500px
+    .skill-wrap
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      .skill-text
+        width: 100%
+        p
+          text-align: left
+          margin-left: 10%
+      .skill-icons-wrap
+        border-left: none
+        .skill-icons
+          .html, .css, .jquery
+
+
+
+
+
+
+
+
+
+//animations
+
+@keyframes spin
+  0%
+    transform: rotate(0deg) scale(1)
+  50%
+    transform: rotate(180deg) scale(1.15)
+  100%
+    transform: rotate(360deg) scale(1)
+
+@keyframes zoom
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.2)
+  100%
+    transform: scale(1)
+
+@keyframes zoom1
+  0%
+    transform: scale(1)
+    opacity: 0.6
+  50%
+    transform: scale(1.2)
+    opacity: 1
+  100%
+    transform: scale(1)
+    opacity: 0.5

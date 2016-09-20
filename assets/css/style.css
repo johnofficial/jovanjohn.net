@@ -9,8 +9,6 @@ body {
 
 .whole-page .container {
   width: 100%;
-  height: 1000px;
-  background-color: #ecf0f1;
   position: relative;
 }
 
@@ -41,6 +39,7 @@ body {
   align-items: center;
   position: fixed;
   box-shadow: -1px 0px 10px #2c3e50;
+  opacity: 0.8;
 }
 
 .left-wrap .menu-icon {
@@ -369,9 +368,9 @@ body {
 }
 
 .skills-section {
-  height: 105vh;
+  min-height: 105vh;
   width: 100%;
-  background-color: #f39c12;
+  background-color: #0EBB9F;
 }
 
 .skills-section h2 {
@@ -385,13 +384,220 @@ body {
   color: white;
 }
 
-.education-section {
-  height: 105vh;
-  width: 100%;
-  background-color: #8e44ad;
+.skills-section .skill-wrap {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
 }
 
-.education-section h2 {
+.skills-section .skill-wrap .skill-text {
+  width: 45%;
+  float: left;
+  border-right: 1px solid black;
+}
+
+.skills-section .skill-wrap .skill-text h3 {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin-left: 10%;
+  letter-spacing: 1vh;
+}
+
+.skills-section .skill-wrap .skill-text p {
+  text-align: right;
+  margin-right: 10%;
+  font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 2.5vh;
+  letter-spacing: 0.5vh;
+  line-height: 5vh;
+}
+
+.skills-section .skill-wrap .skill-text ul {
+  float: right;
+  margin-right: 15%;
+}
+
+.skills-section .skill-wrap .skill-text ul li {
+  margin-right: 10%;
+  font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 2.5vh;
+  letter-spacing: 0.5vh;
+  line-height: 5vh;
+}
+
+.skills-section .skill-wrap .skill-text .more-text {
+  float: left;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap {
+  display: flex;
+  margin: auto;
+  float: right;
+  width: 55%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons {
+  text-align: center;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .html {
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-image: url(../img/html.svg);
+  background-size: cover;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .html:hover {
+  animation: zoom1 1.5s linear infinite;
+  opacity: 1;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .css {
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-image: url(../img/css.svg);
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .css:hover {
+  animation: zoom 1.5s linear infinite;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .css:after, .skills-section .skill-wrap .skill-icons-wrap .skill-icons .css:before {
+  content: '';
+  display: block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .jquery {
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background-image: url(../img/jquery.svg);
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .jquery:hover {
+  animation: zoom 1.5s linear infinite;
+}
+
+.skills-section .skill-wrap .skill-icons-wrap .skill-icons .animation-1:after {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  border: 10px solid transparent;
+  border-top-color: #F5C700;
+  border-bottom-color: #F5C700;
+  animation: spin 2s linear infinite;
+}
+
+@media (max-width: 1200px) {
+  .skills-section {
+    min-height: 100vh;
+    height: 1000px;
+  }
+  .skills-section .skill-wrap .skill-text {
+    border-right: none;
+  }
+  .skills-section .skill-wrap .skill-icons-wrap {
+    border-left: 1px solid black;
+    align-items: center;
+  }
+  .skills-section .skill-wrap .skill-icons-wrap .skill-icons .html, .skills-section .skill-wrap .skill-icons-wrap .skill-icons .css, .skills-section .skill-wrap .skill-icons-wrap .skill-icons .jquery {
+    display: block;
+  }
+}
+
+@media (max-width: 790px) {
+  .skills-section {
+    height: 1500px;
+  }
+  .skills-section .skill-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .skills-section .skill-wrap .skill-text {
+    width: 100%;
+  }
+  .skills-section .skill-wrap .skill-text p {
+    text-align: left;
+    margin-left: 10%;
+  }
+  .skills-section .skill-wrap .skill-icons-wrap {
+    border-left: none;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.15);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom1 {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.help-section {
+  height: 105vh;
+  width: 100%;
+  background-color: #3498db;
+}
+
+.help-section h2 {
   text-align: center;
   font-size: 6vh;
   margin-top: 0;
@@ -400,6 +606,69 @@ body {
   font-weight: 300;
   letter-spacing: 2vh;
   color: white;
+}
+
+.help-section .help-wrap .question-wrap {
+  margin-top: 5%;
+  width: 80%;
+  text-align: justify;
+}
+
+.help-section .help-wrap .question-wrap:hover h3 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.help-section .help-wrap .question-wrap h3 {
+  transition: 1s;
+  line-height: 6vh;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin-left: 10%;
+  letter-spacing: 1vh;
+}
+
+.help-section .help-wrap .contact-me-now {
+  margin-top: 7%;
+}
+
+.help-section .help-wrap .contact-me-now h3 {
+  transition: 1s;
+  line-height: 6vh;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+  margin-left: 10%;
+  letter-spacing: 1vh;
+}
+
+.help-section .help-wrap .contact-me-now h3 a {
+  font-size: 26px;
+  text-decoration: none;
+  color: #e74c3c;
+  transition: 1s;
+}
+
+.help-section .help-wrap .contact-me-now h3 a:hover {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+@media (max-width: 790px) {
+  .help-section {
+    height: 1300px;
+  }
+  .help-section .help-wrap .question-wrap {
+    width: 90%;
+  }
+  .help-section .help-wrap .contact-me-now h3 {
+    text-align: center;
+    justify-content: space-around;
+    width: 80%;
+  }
 }
 
 footer {

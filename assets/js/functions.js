@@ -13,18 +13,6 @@ $(function(){
 
 function scrollAnimation() {
 
-
-    /**
-     * Copyright 2012, Digital Fusion
-     * Licensed under the MIT license.
-     * http://teamdf.com/jquery-plugins/license/
-     *
-     * @author Sam Sehnert
-     * @desc A small plugin that checks whether elements are within
-     *     the user visible viewport of a web browser.
-     *     only accounts for vertical position, not horizontal.
-     */
-
     $.fn.visible = function(partial) {
 
         var $t            = $(this),
@@ -44,7 +32,7 @@ function scrollAnimation() {
 
   var win = $(window);
 
-  var allMods = $(".about-section, .skills-section, .education-section, .contact-section, .footer");
+  var allMods = $(".about-section, .skills-section, .help-section, .contact-section, .footer");
 
   allMods.each(function(i, el) {
     var el = $(el);
@@ -68,15 +56,18 @@ function scrollAnimation() {
 //This is for navigation section, and with this we can show and hide menu with click on menu icon
 
 function showHideMenu(){
-  var other = $('.landing-page, .about-section, .skills-section, .education-section, .contact-section, .footer');
+  var other = $('.landing-page, .about-section, .skills-section, .help-section, .contact-section, .footer');
   $(other).click(function(){
     $('.left-wrap').css('visibility', 'hidden');
+      $('.menu-icon-content').css('visibility', 'visible');
   });
 
   $('.menu-icon').click(function(){
     $('.left-wrap').css('visibility', 'hidden');
+    $('.menu-icon-content').css('visibility', 'visible');
   });
   $('.menu-icon-content').click(function(){
+    $('.menu-icon-content').css('visibility', 'hidden');
     $('.left-wrap').css('visibility', 'visible');
   })
 }
