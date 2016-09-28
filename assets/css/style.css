@@ -729,16 +729,16 @@ footer .icons .twitter svg:hover path {
   opacity: 1;
 }
 
-footer .icons .google svg {
+footer .icons .linkedin svg {
   transition: transform 400ms ease-in-out;
 }
 
-footer .icons .google svg:hover {
+footer .icons .linkedin svg:hover {
   transform: scale(1.3);
 }
 
-footer .icons .google svg:hover path {
-  fill: #e74c3c;
+footer .icons .linkedin svg:hover path {
+  fill: #3498db;
   opacity: 1;
 }
 
