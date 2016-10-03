@@ -4,9 +4,6 @@ $(function(){
   scrollTop();
   scrollAnimation();
 
-  //This is function for news page
-  gridMasonry();
-  //end news page function
 });
 
 //Function to load animation when is section is in viewport
@@ -98,24 +95,4 @@ function scrollTop() {
     $('.scrollTop').fadeOut();
   }
 });
-}
-
-
-
-
-
-                                                //BLOG
-function gridMasonry(){
-
-  $('.grid').masonry({
-    itemSelector: '.post',
-    columnWidth: 160,
-    gutter: 10
-  });
-
-  $('.post').each(function(i){
-    setTimeout(function(){
-      $('.post').eq(i).addClass('is-visible');
-    }, 200 * i);
-  });
 }
